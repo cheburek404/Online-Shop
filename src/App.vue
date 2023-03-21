@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    Beh gay
+  <div id="app" class="container">
+    
   </div>
   <main-wrapper/>
 </template>
@@ -24,5 +24,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
 }
 </style>

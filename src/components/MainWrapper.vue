@@ -1,8 +1,8 @@
 <template>
     <div class="main-wrapper">
-        <p>{{ title }}</p>
+        <catalog />
     </div>
-    <catalog />
+    
     <basket />
 </template>
 <script>
@@ -24,12 +24,8 @@ export default {
 
 }
 </script>
-<style>
+<style lang="scss">
     .main-wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         max-width: 900px;
         margin: 0 auto;
     }
