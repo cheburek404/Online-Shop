@@ -3,3 +3,28 @@
 body {
     background-color: #f0f0f0;
 }
+
+.btn {
+    color: #fff;
+    background-color: #3bbc46;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: $padding $padding*2;
+    transition: background-color .1s, border .1s linear;
+
+    &:hover {
+        border: 1px solid #55C85E;
+        background-color: #55C85E;
+        box-shadow: rgba(160, 160, 160, 0.15) 0px 5px 15px 0px;
+    }
+
+    &__delete {
+        background-color: #BC3B3B !important;
+        transition: background-color .1s, border .1s linear;
+
+        &:hover {
+            border: 1px solid #D15454;
+            background-color: #D15454 !important;
+        }
+    }   
+}

@@ -12,11 +12,15 @@
         </div>
         <div class="cart-item__quantity">
             <p>Quantity:</p>
-            {{ cart_item_data.quantity }}
+            <span>
+                <span class="quantity__btn" @click="decrementItem">-</span>
+                {{ cart_item_data.quantity }}
+                <span class="quantity__btn" @click="incrementItem">+</span>
+            </span>
         </div>
         <button 
             @click="deleteFromCart"
-            class="btn"
+            class="btn btn__delete"
         >
             Delete
         </button>
@@ -39,14 +43,17 @@ export default {
         }
     },
     methods: {
+        decrementItem() {
+            this.$emit('decrement');
+        },
+        incrementItem() {
+            this.$emit('increment');
+        },
         deleteFromCart() {
             this.$emit('deleteFromCart')
-        }
+        },
     },
-    mounted() {
-        const cartItemData = this.cart_item_data;
-        cartItemData.quantity = 1;
-    },
+    
 
 }
 </script>
@@ -70,5 +77,9 @@ export default {
             height: 200px;
             width: 200px;
         }
+
+        .quantity__btn {
+            cursor: pointer;
+        } 
     }
 </style>
