@@ -1,5 +1,12 @@
 <template>
     <div class="catalog">
+        <router-link
+            :to="{
+                name: 'Cart',
+                params: { cart_data: CART }
+            }">
+            <div class="catalog__link">Cart: {{ CART.length }}</div>
+        </router-link>
         <h1>Catalog</h1>
         <div class="catalog__list">
             <catalog-item 
@@ -28,7 +35,8 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'PRODUCTS'
+            'PRODUCTS',
+            'CART'
         ]),
     },
     methods: {
@@ -58,6 +66,18 @@ export default {
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+        }
+
+        &__link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px;  
+            border: 1px solid #a2a2a2;
+            border-radius: 10px;
+            color: #000;
+            background-color: #fff;
+            box-shadow: rgba(160, 160, 160, 0.15) 0px 5px 15px 0px;
         }
     }
 </style>
