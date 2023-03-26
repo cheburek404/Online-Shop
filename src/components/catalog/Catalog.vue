@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import CatalogItem from './CatalogItem.vue';
+import CatalogItem from '../catalog/CatalogItem.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
@@ -73,7 +73,7 @@ export default {
             top: 20px;
             right: 20px;
             padding: 16px;  
-            border: 1px solid #a2a2a2;
+            border: 1px solid #cbcbcb;
             border-radius: 10px;
             color: #000;
             background-color: #fff;

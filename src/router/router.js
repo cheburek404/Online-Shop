@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import Catalog from '../components/Catalog';
-import Cart from '../components/Cart.vue';
+import Catalog from '../components/catalog/Catalog';
+import Cart from '../components/cart/Cart.vue';
 
 const routes = [
     {

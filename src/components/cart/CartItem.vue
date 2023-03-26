@@ -1,7 +1,7 @@
 <template>
     <div class="cart-item">
         <img 
-            :src="require('../assets/images/' + cart_item_data.image)" 
+            :src="require('../../assets/images/' + cart_item_data.image)" 
             alt=""
             class="cart-item__img"
         >
@@ -80,6 +80,10 @@ export default {
 
         .quantity__btn {
             cursor: pointer;
+            margin: 10px;
+            padding: 4px 10px;
+            border: 1px solid #d5d5d5;
+            border-radius: 50%;
         } 
     }
 </style>

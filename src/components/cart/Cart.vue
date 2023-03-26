@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import CartItem from './CartItem.vue';
+import CartItem from '../cart/CartItem.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
