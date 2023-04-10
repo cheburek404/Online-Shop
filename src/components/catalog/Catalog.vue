@@ -8,9 +8,14 @@
             <div class="catalog__link">Cart: {{ CART.length }}</div>
         </router-link>
         <h1>Catalog</h1>
+        <select-category 
+            :selected="selected"
+            :options="categories"
+            @select="sortByCategories"
+        />
         <div class="catalog__list">
             <catalog-item 
-                v-for="product in PRODUCTS"
+                v-for="product in filteredProducts"
                 :key="product.article"
                 :product_data="product"
                 @addToCart="addToCart"
@@ -22,15 +27,23 @@
 <script>
 import CatalogItem from '../catalog/CatalogItem.vue';
 import { mapActions, mapGetters } from 'vuex';
+import SelectCategory from '../SelectCategory.vue';
 
 export default {
     name: "Catalog",
     components: {
-        CatalogItem
+        CatalogItem,
+        SelectCategory
     },
     data() {
         return {
-            
+            categories: [
+                {name: "All", value: "All"},
+                {name: "Men's", value: "M"},
+                {name: "Women's", value: "W"}
+            ],
+            selected: 'All',
+            sortedProducts: [],
         }
     },
     computed: {
@@ -38,6 +51,13 @@ export default {
             'PRODUCTS',
             'CART'
         ]),
+        filteredProducts() {
+            if(this.sortedProducts.length) {
+                return this.sortedProducts;
+            } else { 
+                return this.PRODUCTS;
+            }
+        }
     },
     methods: {
         ...mapActions([
@@ -46,6 +66,12 @@ export default {
         ]),
         addToCart(data) {
             this.ADD_TO_CART(data);
+        },
+        sortByCategories(option) {
+            this.selected = option.name;
+            this.sortedProducts = this.PRODUCTS.filter(function(product) {
+                return product.category === option.name
+            })
         },
     },
     mounted() {

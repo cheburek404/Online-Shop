@@ -1,10 +1,18 @@
 @import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+#app {
+    font-family: Montserrat, sans-serif !important;
+}
 
 body {
+    font-weight: 500;
     background-color: #f0f0f0;
 }
 
 .btn {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
     color: #fff;
     background-color: #3bbc46;
     border: 1px solid #fff;
@@ -27,4 +35,123 @@ body {
             background-color: #D15454 !important;
         }
     }   
+
+    &__select {
+        padding: 8px 16px;
+        margin: 0 15px 25px;
+        background-color: #000;
+        font-size: 14px;
+
+        &:hover {
+            border: 1px solid #333333;
+            background-color: #333333;
+            box-shadow: rgba(112, 112, 112, 0.15) 0px 5px 15px 0px;
+        }
+    }
+}
+
+
+/* CATALOG ITEM */
+.catalog-item {
+    flex-basis: 26%;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 18px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    transition: box-shadow 0.1s linear;
+  
+    &:hover {
+      box-shadow: rgba(160, 160, 160, 0.15) 0px 5px 15px 0px;
+    }
+  
+    &__img {
+      height: 200px;
+      width: 200px;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: 700;
+
+        span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    &__show-info {
+        background-color: #3b96bc;
+
+        &:hover {
+            border: 1px solid #5599c8;
+            background-color: #5599c8;
+        }
+    }
+
+    .popup-item {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px 0;
+    }
+}
+
+
+/* SELECT */
+.select {
+    display: flex;
+}
+
+
+/* POP UP */
+.popup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 128vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(29, 29, 29, .7);
+}
+.popup {
+    cursor: default;
+    z-index: 10;
+    padding: 16px;
+    position: fixed;
+    top: 25%;
+    width: 400px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: rgba(252, 252, 252, .2) 0px 5px 15px 0px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .close {
+            background-color: #bc3b3b;
+
+            &:hover {
+                border: 1px solid #c85555;
+                background-color: #c85555;
+            }
+        }
+    }
 }
